@@ -39,13 +39,14 @@ function create(req, res, next) {
 function read(req,res){
   res.json({data: res.locals.order})
 }
+
+// Hi Jacob, I am Tushar from the grading team. Thank you so much for making this submission. I reviewed your submission of the GrubDash project. I really appreciate your hard work and time for this project but there are still a few things on which you need to work and fix.
+// What can you improve?
+// you are using and updating the id property in orders. controller.js. The id property isn't required in the body of the request, but if it is present it must match:orderId from the route.
+
+
 function update(req, res, next) {
   const { data: { id, deliverTo, mobileNumber, status, dishes} = {} } = req.body;
-  const orderId = req.params.orderId 
-  if(id){
-    res.locals.order.id = id;
-  }else{res.locals.order.id = orderId}
-  
   res.locals.order.deliverTo = deliverTo;
   res.locals.order.mobileNumber = mobileNumber;
   res.locals.order.status = status;
